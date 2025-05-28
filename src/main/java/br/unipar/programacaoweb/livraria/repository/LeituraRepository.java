@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface LeituraRepository extends JpaRepository<Leitur, Long> {
+public interface LeituraRepository extends JpaRepository<Leitura, Long> {
 
 //    List<Leitura> findByTipoContainingIgnoreCase(String );
 
