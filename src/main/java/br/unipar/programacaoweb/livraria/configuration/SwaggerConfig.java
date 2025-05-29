@@ -12,9 +12,9 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Livraria API")
+                        .title("EcoTrack API")
                         .version("1.0")
-                        .description("API para gerenciamento de livros e autores\n" +
+                        .description("API para gerenciamento de leituras, sensores e estação\n" +
                                 "Aqui detalhamos os endpoints disponíveis na API, suas funcionalidades" +
                                 " e como utilizá-los."));
     }
