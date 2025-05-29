@@ -73,6 +73,18 @@ public class LeituraService {
         leituraRepository.save(leitura);
     }
 
+    public void verificarIntervalo() {
+        List<Leitura> leitura = listarTodos();
+        for (Leitura leitura1 : leitura) {
+            //verifca se está offline
+            if (leitura1.getLeitura() > 200 && leitura1.getLeitura() < 400) {
+
+                //mandar mensagem de aviso
+                System.out.println("Leitura: " + leitura1.getId() + " está Fora do intervalo.");
+            }
+        }
+    }
+
 //    public void verificarSensoresOffline() {
 //        List<Sensor> sensor = listarTodos();
 //        for (Sensor sensor1 : sensor) {
