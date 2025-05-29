@@ -3,6 +3,8 @@ package br.unipar.programacaoweb.livraria.service;
 import br.unipar.programacaoweb.livraria.model.Leitura;
 import br.unipar.programacaoweb.livraria.model.Sensor;
 import br.unipar.programacaoweb.livraria.repository.LeituraRepository;
+import br.unipar.programacaoweb.livraria.repository.SensorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -50,11 +52,23 @@ public class LeituraService {
         }
     }
 
+    @Autowired
+    private SensorRepository sensorRepository;
+
     public void criarNovLeituraAleatoria() {
+        List<Sensor> sensores = sensorRepository.findAll();
+
+        if (sensores.isEmpty()) {
+            throw new RuntimeException("Nenhum sensor cadastrado encontrado.");
+        }
+
+        // Seleciona um sensor aleatoriamente
+        Sensor sensorAleatorio = sensores.get((int) (Math.random() * sensores.size()));
+
         Leitura leitura = new Leitura();
         leitura.setLeitura((int) (Math.random() * 500) + 1);
         leitura.setTimestamp(new Timestamp(System.currentTimeMillis()));
-        leitura.setSensor();
+        leitura.setSensor(sensorAleatorio);
 
         leituraRepository.save(leitura);
     }
