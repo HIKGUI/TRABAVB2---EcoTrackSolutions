@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/sensor")
+@RequestMapping("/leitura")
 public class LeituraController {
 
     private SensorService sensorService;
