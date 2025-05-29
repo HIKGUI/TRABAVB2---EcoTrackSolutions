@@ -54,6 +54,7 @@ public class LeituraService {
         Leitura leitura = new Leitura();
         leitura.setLeitura((int) (Math.random() * 500) + 1);
         leitura.setTimestamp(new Timestamp(System.currentTimeMillis()));
+        leitura.setSensor();
 
         leituraRepository.save(leitura);
     }
