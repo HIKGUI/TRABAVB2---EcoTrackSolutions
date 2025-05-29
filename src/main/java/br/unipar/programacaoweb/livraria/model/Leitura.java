@@ -1,9 +1,7 @@
 package br.unipar.programacaoweb.livraria.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,5 +22,9 @@ public class Leitura {
 
     private Timestamp timestamp;
 
+    @ManyToOne
+    @JoinColumn(name = "sensor_id")
+    @JsonIgnore
+    private Sensor sensor;
 
 }

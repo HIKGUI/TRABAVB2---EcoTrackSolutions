@@ -1,13 +1,12 @@
 package br.unipar.programacaoweb.livraria.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -25,6 +24,9 @@ public class Sensor {
     private String data_instalacao;
 
     private String unidade;
+
+    @OneToMany(mappedBy = "leitura", cascade = CascadeType.ALL, orphanRemoval = true, fetch= FetchType.LAZY)
+    private List<Leitura> leitura = new ArrayList<>();
 
 
 }
