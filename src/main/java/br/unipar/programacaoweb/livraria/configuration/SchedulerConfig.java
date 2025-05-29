@@ -10,25 +10,25 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableScheduling
 public class SchedulerConfig {
 
-    @Autowired
-    private SensorService sensorService;
-
-    @Scheduled(fixedRate = 5000)
-    public void scheduleTask() {
-        System.out.println("Tarefa executada agora!");
-        sensorService.criarNovSensorAleatoria();
-    }
-
-    @Scheduled(fixedRate = 5000)
-    public void sensorInativaAleatoriamente() {
-        System.out.println("Sensor Inativado agora!");
-        //inativer um sensor aleatoriamente
-    }
-
-
-    @Scheduled(fixedRate = 20000)
-    public void verificarSensoresInativos() {
-        // Verifica se algum sensor está inativo
-        sensorService.verificarSensoresOffline();
-    }
+//    @Autowired
+//    private SensorService sensorService;
+//
+//    @Scheduled(fixedRate = 5000)
+//    public void scheduleTask() {
+//        System.out.println("Tarefa executada agora!");
+//        sensorService.criarNovSensorAleatoria();
+//    }
+//
+//    @Scheduled(fixedRate = 5000)
+//    public void sensorInativaAleatoriamente() {
+//        System.out.println("Sensor Inativado agora!");
+//        //inativer um sensor aleatoriamente
+//    }
+//
+//
+//    @Scheduled(fixedRate = 20000)
+//    public void verificarSensoresInativos() {
+//        // Verifica se algum sensor está inativo
+//        sensorService.verificarSensoresOffline();
+//    }
 }
