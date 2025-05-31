@@ -53,12 +53,9 @@ public class EstacaoService {
 
         Estacao estacao = new Estacao();
         estacao.setId((long) 0);
-        List<String> nome = Arrays.asList("ST1", "ST2", "ST3", "ST4", "ST5");
-        Collections.shuffle(nome); // embaralha a lista
-        estacao.setNome(nome.get(0));
-        List<String> status = Arrays.asList("ATIVA", "INATIVA", "MANUTENÇÃO");
-        Collections.shuffle(status); // embaralha a lista
-        estacao.setStatus(status.get(0));
+        estacao.setNome("ST1");
+        estacao.setStatus("ATIVA");
+        estacao.setData_instalacao("01/02/2000");
         estacao.setLatitude("0");
         estacao.setLongitude("0");
         estacaoRepository.save(estacao);

@@ -26,10 +26,10 @@ public class Sensor {
 
     private String unidade;
 
+
     @ManyToOne
     @JoinColumn(name = "estacao_id")
     @JsonIgnore
-
     private Estacao estacao;
 
     @OneToMany(mappedBy = "leitura", cascade = CascadeType.ALL, orphanRemoval = true, fetch= FetchType.LAZY)
