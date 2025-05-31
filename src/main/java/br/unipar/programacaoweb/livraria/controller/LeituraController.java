@@ -1,5 +1,6 @@
 package br.unipar.programacaoweb.livraria.controller;
 
+import br.unipar.programacaoweb.livraria.model.Autor;
 import br.unipar.programacaoweb.livraria.model.Leitura;
 import br.unipar.programacaoweb.livraria.model.Sensor;
 import br.unipar.programacaoweb.livraria.service.LeituraService;
@@ -53,5 +54,9 @@ public class LeituraController {
 
         return ResponseEntity.noContent().build();
     }
+
+
+
+
 
 }

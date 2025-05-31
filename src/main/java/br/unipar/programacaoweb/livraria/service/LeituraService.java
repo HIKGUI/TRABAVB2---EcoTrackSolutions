@@ -1,6 +1,8 @@
 package br.unipar.programacaoweb.livraria.service;
 
+import br.unipar.programacaoweb.livraria.model.Autor;
 import br.unipar.programacaoweb.livraria.model.Leitura;
+import br.unipar.programacaoweb.livraria.model.Livro;
 import br.unipar.programacaoweb.livraria.model.Sensor;
 import br.unipar.programacaoweb.livraria.repository.LeituraRepository;
 import br.unipar.programacaoweb.livraria.repository.SensorRepository;
@@ -70,31 +72,32 @@ public class LeituraService {
         leitura.setLeitura((int) (Math.random() * 500) + 1);
         leitura.setTimestamp(new Timestamp(System.currentTimeMillis()));
         leitura.setSensor(sensorAleatorio);
+        leitura.setDescricao(verificarIntervalo());
+
+
 
         leituraRepository.save(leitura);
-        verificarIntervalo();
+
     }
 
-    public void verificarIntervalo() {
+    public String verificarIntervalo() {
         List<Leitura> leitura = listarTodos();
+        String result = "";
         for (Leitura leitura1 : leitura) {
             //verifca se está offline
             if (leitura1.getLeitura() > 200 && leitura1.getLeitura() < 400) {
-
+                result = "Leitura: " + leitura1.getId() + " está Fora do intervalo.";
                 //mandar mensagem de aviso
                 System.out.println("Leitura: " + leitura1.getId() + " está Fora do intervalo.");
             }
         }
+
+        return result;
     }
 
-//    public void verificarSensoresOffline() {
-//        List<Sensor> sensor = listarTodos();
-//        for (Sensor sensor1 : sensor) {
-//            //verifca se está offline
-//            if (sensor1.getStatus() == null) {
-//               //mandar mensagem de aviso
-//                System.out.println("Sensor: " + sensor1.getId() + " está offline.");
-//            }
-//        }
-//    }
+    public Leitura editar(Long id, Leitura novo) {
+
+    }
+
+
 }
