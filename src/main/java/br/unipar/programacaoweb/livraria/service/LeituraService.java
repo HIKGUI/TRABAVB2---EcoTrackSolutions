@@ -85,8 +85,8 @@ public class LeituraService {
         String result = "";
         for (Leitura leitura1 : leitura) {
             //verifca se está offline
-            if (leitura1.getLeitura() > 200 && leitura1.getLeitura() < 400) {
-                result = "Leitura: " + leitura1.getId() + " está Fora do intervalo.";
+            if (leitura1.getLeitura() < 200 && leitura1.getLeitura() > 400) {
+                result = "Leitura está Fora do intervalo.";
                 //mandar mensagem de aviso
                 System.out.println("Leitura: " + leitura1.getId() + " está Fora do intervalo.");
             }
