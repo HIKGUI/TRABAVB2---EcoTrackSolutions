@@ -95,9 +95,7 @@ public class LeituraService {
         return result;
     }
 
-    public Leitura editar(Long id, Leitura novo) {
-
-    }
-
-
 }
+
+
+
