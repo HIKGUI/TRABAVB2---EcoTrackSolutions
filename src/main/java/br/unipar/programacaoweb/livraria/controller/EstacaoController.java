@@ -20,11 +20,11 @@ public class EstacaoController {
 
     private EstacaoService estacaoService;
 
-    public EstacaoController(SensorService sensorService) {
+    public EstacaoController(EstacaoService estacaoService) {
         this.estacaoService = estacaoService;
     }
 
-    @Operation(summary = "Listar todos os sensores")
+    @Operation(summary = "Listar todas as estacoes")
     @GetMapping("/listar")
     public ResponseEntity<List<Estacao>> listarSensor() {
         List<Estacao> estacao = estacaoService.listarTodos();

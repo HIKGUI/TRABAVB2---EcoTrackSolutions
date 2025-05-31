@@ -46,7 +46,7 @@ public class SecurityConfig {
                                         .hasAnyAuthority("SUPER", "COMUM")
                                         .requestMatchers("leitura/salvar")
                                         .hasAnyAuthority("SUPER")
-                                        .requestMatchers("estacoes/listar")
+                                        .requestMatchers("estacao/listar")
                                         .hasAnyAuthority("SUPER", "COMUM")
                                         .requestMatchers("estacoes/salvar")
                                             .hasAnyAuthority("SUPER")
