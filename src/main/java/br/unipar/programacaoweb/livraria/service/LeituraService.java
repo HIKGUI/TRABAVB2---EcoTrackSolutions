@@ -74,8 +74,6 @@ public class LeituraService {
         leitura.setSensor(sensorAleatorio);
         leitura.setDescricao(verificarIntervalo());
 
-
-
         leituraRepository.save(leitura);
 
     }
