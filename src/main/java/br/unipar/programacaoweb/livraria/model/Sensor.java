@@ -1,5 +1,6 @@
 package br.unipar.programacaoweb.livraria.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +25,12 @@ public class Sensor {
     private String data_instalacao;
 
     private String unidade;
+
+    @ManyToOne
+    @JoinColumn(name = "estacao_id")
+    @JsonIgnore
+
+    private Estacao estacao;
 
     @OneToMany(mappedBy = "leitura", cascade = CascadeType.ALL, orphanRemoval = true, fetch= FetchType.LAZY)
     private List<Leitura> leitura = new ArrayList<>();
