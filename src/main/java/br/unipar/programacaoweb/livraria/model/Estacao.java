@@ -32,7 +32,7 @@ public class Estacao {
 
     private String data_instalacao;
 
-    @OneToMany(mappedBy = "unidade", cascade = CascadeType.ALL, orphanRemoval = true, fetch= FetchType.LAZY)
-    private List<Sensor> unidade = new ArrayList<>();
+    @OneToMany(mappedBy = "estacao", cascade = CascadeType.ALL, orphanRemoval = true, fetch= FetchType.LAZY)
+    private List<Sensor> sensor = new ArrayList<>();
 
 }
