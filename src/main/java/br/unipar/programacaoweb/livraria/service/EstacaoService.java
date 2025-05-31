@@ -52,7 +52,6 @@ public class EstacaoService {
     public void criarNovEstacaoAleatoria() {
 
         Estacao estacao = new Estacao();
-        estacao.setId((long) 0);
         estacao.setNome("ST1");
         estacao.setStatus("ATIVA");
         estacao.setData_instalacao("01/02/2000");
