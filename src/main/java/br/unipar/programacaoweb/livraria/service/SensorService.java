@@ -2,7 +2,9 @@ package br.unipar.programacaoweb.livraria.service;
 
 import br.unipar.programacaoweb.livraria.model.Estacao;
 import br.unipar.programacaoweb.livraria.model.Sensor;
+import br.unipar.programacaoweb.livraria.repository.EstacaoRepository;
 import br.unipar.programacaoweb.livraria.repository.SensorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -51,6 +53,9 @@ public class SensorService {
 //        }
 //    }
 
+    @Autowired
+    private EstacaoRepository estacaoRepository;
+
     public void criarNovSensorAleatoria() {
 
         List<Estacao> estacao = estacaoRepository.findAll();
@@ -67,7 +72,7 @@ public class SensorService {
         Sensor sensor = new Sensor();
         sensor.setTipo(tipos.get(0));
         sensor.setStatus("ONLINE");
-        sensor.setLeitura(estacaoAleatorio);
+        sensor.setEstacao(estacaoAleatorio);
 
         sensorRepository.save(sensor);
     }
