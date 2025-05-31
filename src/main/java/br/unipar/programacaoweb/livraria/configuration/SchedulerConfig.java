@@ -1,6 +1,5 @@
 package br.unipar.programacaoweb.livraria.configuration;
 
-import br.unipar.programacaoweb.livraria.service.EstacaoService;
 import br.unipar.programacaoweb.livraria.service.LeituraService;
 import br.unipar.programacaoweb.livraria.service.SensorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +26,6 @@ public class SchedulerConfig {
 //    }
 //
 //    @Scheduled(fixedRate = 5000)
-//    public void scheduleTask() {
-//        System.out.println("Tarefa executada agora!");
-//        leituraService.criarNovLeituraAleatoria();
-//    }
-//
-//    @Scheduled(fixedRate = 5000)
 //    public void sensorInativaAleatoriamente() {
 //        System.out.println("Sensor Inativado agora!");
 //        //inativer um sensor aleatoriamente
@@ -44,10 +37,4 @@ public class SchedulerConfig {
 //        // Verifica se algum sensor está inativo
 //        sensorService.verificarSensoresOffline();
 //    }
-
-    @Scheduled(fixedRate = 5000)
-    public void scheduleTask() {
-        System.out.println("Tarefa executada agora!");
-        EstacaoService
-    }
 }
