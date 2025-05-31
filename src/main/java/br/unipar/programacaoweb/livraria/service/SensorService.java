@@ -1,5 +1,6 @@
 package br.unipar.programacaoweb.livraria.service;
 
+import br.unipar.programacaoweb.livraria.model.Estacao;
 import br.unipar.programacaoweb.livraria.model.Sensor;
 import br.unipar.programacaoweb.livraria.repository.SensorRepository;
 import org.springframework.stereotype.Service;
@@ -51,11 +52,22 @@ public class SensorService {
 //    }
 
     public void criarNovSensorAleatoria() {
+
+        List<Estacao> estacao = estacaoRepository.findAll();
+
+        if (estacao.isEmpty()) {
+            throw new RuntimeException("Nenhum sensor cadastrado encontrado.");
+        }
+
+        // Seleciona um sensor aleatoriamente
+        Estacao estacaoAleatorio = estacao.get((int) (Math.random() * estacao.size()));
+
         List<String> tipos = Arrays.asList("TEMPERATURA", "UMIDADE", "CO2", "RUÍDO");
         Collections.shuffle(tipos); // embaralha a lista
         Sensor sensor = new Sensor();
         sensor.setTipo(tipos.get(0));
         sensor.setStatus("ONLINE");
+        sensor.setLeitura(estacaoAleatorio);
 
         sensorRepository.save(sensor);
     }

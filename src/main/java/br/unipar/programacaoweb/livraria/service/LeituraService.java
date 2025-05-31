@@ -50,6 +50,7 @@ public class LeituraService {
             System.out.println("Leitura: " + leitura1.getId() + " - atualizado para: " + leituraAleatorio);
             salvar(leitura1);
         }
+        verificarIntervalo();
     }
 
     @Autowired
@@ -71,6 +72,7 @@ public class LeituraService {
         leitura.setSensor(sensorAleatorio);
 
         leituraRepository.save(leitura);
+        verificarIntervalo();
     }
 
     public void verificarIntervalo() {
