@@ -25,14 +25,14 @@ public class SchedulerConfig {
 //    @Scheduled(fixedRate = 5000)
 //    public void scheduleTask() {
 //        System.out.println("Tarefa executada agora!");
-//        sensorService.criarNovSensorAleatoria();
+//        estacaoService.criarNovEstacaoAleatoria();
 //    }
-//
 //    @Scheduled(fixedRate = 5000)
 //    public void scheduleTask() {
 //        System.out.println("Tarefa executada agora!");
-//        estacaoService.criarNovEstacaoAleatoria();
+//        sensorService.criarNovSensorAleatoria();
 //    }
+//
 //
 //    @Scheduled(fixedRate = 5000)
 //    public void scheduleTask() {
