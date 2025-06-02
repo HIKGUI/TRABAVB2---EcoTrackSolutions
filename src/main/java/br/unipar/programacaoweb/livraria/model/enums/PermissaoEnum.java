@@ -7,8 +7,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum PermissaoEnum {
 
-    SUPER(1, "ADMIN"),
-    COMUM(2, "USER");
+    ADMIN(1, "ADMIN"),
+    USER(2, "USER");
 
     private Integer id;
     private String descricao;
