@@ -42,14 +42,20 @@ public class SchedulerConfig {
 //    }
 //
     @Scheduled(fixedRate = 5000)
-    public void sensorInativaAleatoriamente() {
-        System.out.println("Sensor Inativado agora!");
-        //inativer um sensor aleatoriamente
+    public void inativarEstacoesAleatoriamente() {
+        estacaoService.inativarEstacoesAleatoriamente();
+        //inativer uma estacao aleatoriamente
     }
 
     @Scheduled(fixedRate = 2000)
     public void verificarSensoresInativos() {
         // Verifica se algum sensor está inativo
         sensorService.verificarSensoresOffline();
+    }
+
+    @Scheduled(fixedRate = 2000)
+    public void verificarEstaçãoInativa() {
+        // Verifica se algum sensor está inativo
+        estacaoService.verificarEstaçãoInativa();
     }
 }

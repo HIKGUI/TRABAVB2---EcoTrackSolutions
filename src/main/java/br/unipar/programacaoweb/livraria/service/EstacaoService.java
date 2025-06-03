@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class EstacaoService {
@@ -63,7 +64,7 @@ public class EstacaoService {
         estacaoRepository.save(estacao);
     }
 
-    public void verificarEstaçãoOffline() {
+    public void verificarEstaçãoInativa() {
         List<Estacao> estacao = listarTodos();
         for (Estacao estacao1 : estacao) {
             //verifca se está offline
@@ -74,6 +75,22 @@ public class EstacaoService {
             }
         }
     }
+
+    public void inativarEstacoesAleatoriamente() {
+        List<Estacao> estacoes = listarTodos();
+        Random random = new Random();
+
+        for (Estacao estacao : estacoes) {
+            boolean inativar = random.nextBoolean(); // true ou false aleatoriamente
+
+            if (inativar) {
+                estacao.setStatus("INATIVA");
+                estacaoRepository.save(estacao);
+                System.out.println("Estação " + estacao.getId() + " foi inativada.");
+            }
+        }
+    }
+
 
     @Autowired
     public EstacaoService(EstacaoRepository estacaoRepository, LeituraRepository leituraRepository) {
