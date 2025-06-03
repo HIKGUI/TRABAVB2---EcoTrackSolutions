@@ -90,4 +90,13 @@ public class EstacaoController {
         return ResponseEntity.ok(estacaoService.salvar(estacaoAtual));
     }
 
+    @GetMapping("/media-leituras/{id}")
+    public ResponseEntity<Double> mediaLeituraPorEstacao(@PathVariable Long id) {
+        Double media = estacaoService.mediaLeituraPorEstacao(id);
+        if (media == null) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(media);
+    }
+
 }

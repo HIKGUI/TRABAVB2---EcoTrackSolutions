@@ -1,8 +1,10 @@
 package br.unipar.programacaoweb.livraria.service;
 
 import br.unipar.programacaoweb.livraria.model.Estacao;
+import br.unipar.programacaoweb.livraria.model.Leitura;
 import br.unipar.programacaoweb.livraria.model.Sensor;
 import br.unipar.programacaoweb.livraria.repository.EstacaoRepository;
+import br.unipar.programacaoweb.livraria.repository.LeituraRepository;
 import br.unipar.programacaoweb.livraria.repository.SensorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,7 @@ import java.util.List;
 public class EstacaoService {
 
     private final EstacaoRepository estacaoRepository;
+    private LeituraRepository leituraRepository;
 
     public EstacaoService(EstacaoRepository estacaoRepository) {
         this.estacaoRepository = estacaoRepository;
@@ -69,6 +72,16 @@ public class EstacaoService {
                 System.out.println("Estação: " + estacao1.getId() + " está em " + estacao1.getStatus());
             }
         }
+    }
+
+    @Autowired
+    public EstacaoService(EstacaoRepository estacaoRepository, LeituraRepository leituraRepository) {
+        this.estacaoRepository = estacaoRepository;
+        this.leituraRepository = leituraRepository;
+    }
+
+    public Double mediaLeituraPorEstacao(Long estacaoId) {
+        return leituraRepository.mediaLeiturasPorEstacao(estacaoId);
     }
 
 
