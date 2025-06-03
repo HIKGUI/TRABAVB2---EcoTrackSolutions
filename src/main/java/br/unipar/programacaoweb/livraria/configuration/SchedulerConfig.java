@@ -41,7 +41,7 @@ public class SchedulerConfig {
 //        leituraService.criarNovLeituraAleatoria();
 //    }
 //
-    @Scheduled(fixedRate = 50000)
+    @Scheduled(fixedRate = 10000)
     public void inativarEstacoesAleatoriamente() {
         estacaoService.inativarEstacoesAleatoriamente();
         //inativer uma estacao aleatoriamente
@@ -53,7 +53,7 @@ public class SchedulerConfig {
         sensorService.verificarSensoresOffline();
     }
 
-    @Scheduled(fixedRate = 20000)
+    @Scheduled(fixedRate = 100000)
     public void verificarEstaçãoInativa() {
         // Verifica se algum sensor está inativo
         estacaoService.verificarEstaçãoInativa();
