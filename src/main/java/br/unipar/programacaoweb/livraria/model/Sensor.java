@@ -32,7 +32,7 @@ public class Sensor {
     @JsonIgnore
     private Estacao estacao;
 
-    @OneToMany(mappedBy = "leitura", cascade = CascadeType.ALL, orphanRemoval = true, fetch= FetchType.LAZY)
+    @OneToMany(mappedBy = "sensor", cascade = CascadeType.ALL, orphanRemoval = true, fetch= FetchType.LAZY)
     private List<Leitura> leitura = new ArrayList<>();
 
 
