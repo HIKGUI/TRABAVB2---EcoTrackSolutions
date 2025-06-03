@@ -41,7 +41,7 @@ public class SchedulerConfig {
 //        leituraService.criarNovLeituraAleatoria();
 //    }
 //
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 50000)
     public void inativarEstacoesAleatoriamente() {
         estacaoService.inativarEstacoesAleatoriamente();
         //inativer uma estacao aleatoriamente
