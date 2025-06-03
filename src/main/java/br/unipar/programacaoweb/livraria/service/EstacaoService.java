@@ -67,9 +67,10 @@ public class EstacaoService {
         List<Estacao> estacao = listarTodos();
         for (Estacao estacao1 : estacao) {
             //verifca se está offline
-            if (estacao1.getStatus() == "MANUTENÇÃO") {
-               //mandar mensagem de aviso
-                System.out.println("Estação: " + estacao1.getId() + " está em " + estacao1.getStatus());
+            if (estacao1.getStatus() == null) {
+                //mandar mensagem de aviso
+                System.out.println("Estação " + estacao1.getId() + " inativa há 2 minutos ISSO É INACEITÁVEL!: Aviso encaminhado para" +
+                        "Suporte@EcoTrack.com.br");
             }
         }
     }

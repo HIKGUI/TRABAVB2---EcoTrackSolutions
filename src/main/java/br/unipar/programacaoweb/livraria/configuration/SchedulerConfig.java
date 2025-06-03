@@ -41,15 +41,15 @@ public class SchedulerConfig {
 //        leituraService.criarNovLeituraAleatoria();
 //    }
 //
-//    @Scheduled(fixedRate = 5000)
-//    public void sensorInativaAleatoriamente() {
-//        System.out.println("Sensor Inativado agora!");
-//        //inativer um sensor aleatoriamente
-//    }
-//
-//    @Scheduled(fixedRate = 20000)
-//    public void verificarSensoresInativos() {
-//        // Verifica se algum sensor está inativo
-//        sensorService.verificarSensoresOffline();
-//    }
+    @Scheduled(fixedRate = 5000)
+    public void sensorInativaAleatoriamente() {
+        System.out.println("Sensor Inativado agora!");
+        //inativer um sensor aleatoriamente
+    }
+
+    @Scheduled(fixedRate = 2000)
+    public void verificarSensoresInativos() {
+        // Verifica se algum sensor está inativo
+        sensorService.verificarSensoresOffline();
+    }
 }
