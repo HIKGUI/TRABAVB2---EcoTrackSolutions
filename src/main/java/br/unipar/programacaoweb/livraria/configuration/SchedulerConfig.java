@@ -40,22 +40,22 @@ public class SchedulerConfig {
 //        System.out.println("Tarefa executada agora!");
 //        leituraService.criarNovLeituraAleatoria();
 //    }
+////
+//    @Scheduled(fixedRate = 10000)
+//    public void inativarEstacoesAleatoriamente() {
+//        estacaoService.inativarEstacoesAleatoriamente();
+//        //inativer uma estacao aleatoriamente
+//    }
 //
-    @Scheduled(fixedRate = 10000)
-    public void inativarEstacoesAleatoriamente() {
-        estacaoService.inativarEstacoesAleatoriamente();
-        //inativer uma estacao aleatoriamente
-    }
-
-    @Scheduled(fixedRate = 20000)
-    public void verificarSensoresInativos() {
-        // Verifica se algum sensor está inativo
-        sensorService.verificarSensoresOffline();
-    }
-
-    @Scheduled(fixedRate = 100000)
-    public void verificarEstaçãoInativa() {
-        // Verifica se algum sensor está inativo
-        estacaoService.verificarEstaçãoInativa();
-    }
+//    @Scheduled(fixedRate = 20000)
+//    public void verificarSensoresInativos() {
+//        // Verifica se algum sensor está inativo
+//        sensorService.verificarSensoresOffline();
+//    }
+//
+//    @Scheduled(fixedRate = 100000)
+//    public void verificarEstaçãoInativa() {
+//        // Verifica se algum sensor está inativo
+//        estacaoService.verificarEstaçãoInativa();
+//    }
 }
